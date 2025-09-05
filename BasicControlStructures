@@ -1,0 +1,187 @@
+package sabijonarraydemo;
+
+import java.util.Scanner;
+import java.util.InputMismatchException;
+
+/**
+ *
+ * @author User
+ */
+public class BasicControlStructures {
+    public static void main(String[] args) {
+        
+        // Uncomment the method you'd like to test:
+        // scanPosiNegative();
+        // scanDivisibleBy3();
+        // whoIsStronger();
+        // isItALeapYear();
+        // vowelConsonant();
+        // multiplicationTable();
+        // sumNumbers();
+        // cubeInteger();
+        // pyramidReverses();
+        // reversesPyramid();
+    }
+
+    // BCS 1
+    public static void scanPosiNegative() {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Input Number: ");
+        int num = sc.nextInt();
+        if (num > 0) {
+            System.out.println(num + " is positive.");
+        } else if (num < 0) {
+            System.out.println(num + " is negative.");
+        } else {
+            System.out.println(num + " is zero.");
+        }
+    }
+
+    // BCS 2
+    public static void scanDivisibleBy3() {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Input Number: ");
+        int num = sc.nextInt();
+        if (num % 3 == 0) {
+            System.out.println(num + " is divisible by 3");
+        } else {
+            System.out.println(num + " is not divisible by 3");
+        }
+    }
+
+    // BCS 3
+    public static void whoIsStronger() {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Input the 1st Number: ");
+        int a = sc.nextInt();
+        System.out.println("Input the 2nd Number: ");
+        int b = sc.nextInt();
+        System.out.println("Input the 3rd Number: ");
+        int c = sc.nextInt();
+
+        if (a >= b && a >= c) {
+            System.out.println("The greatest: " + a);
+        } else if (b >= a && b >= c) {
+            System.out.println("The greatest: " + b);
+        } else {
+            System.out.println("The greatest: " + c);
+        }
+    }
+
+    // BCS 4
+    public static void isItALeapYear() {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Input year: ");
+        int year = sc.nextInt();
+        if ((year % 4 == 0 && year % 100 != 0) || (year % 400 == 0)) {
+            System.out.println(year + " is a leap year.");
+        } else {
+            System.out.println(year + " is not a leap year.");
+        }
+    }
+
+    // BCS 5
+    public static void vowelConsonant() {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Input an alphabet: ");
+        String alpa = sc.nextLine();
+
+        if (alpa.length() != 1) {
+            System.out.println("Need to be single character.");
+        } else {
+            char ch = alpa.charAt(0);
+
+            if (Character.isLetter(ch)) {
+                ch = Character.toLowerCase(ch);
+
+                if (ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u') {
+                    System.out.println("Input letter is Vowel");
+                } else {
+                    System.out.println("Input letter is Consonant");
+                }
+            } else {
+                System.out.println("Need to be a letter (a-z or A-Z).");
+            }
+        }
+    }
+
+    // BCS 6
+    public static void multiplicationTable() {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Input range: ");
+        int a = sc.nextInt();
+        
+        for (int i = 1; i <= 5; i++) {
+            for (int j = 1; j <= a; j++) {
+                System.out.print(i * j + " ");
+            }
+            System.out.println();
+        }
+    }
+
+    // BCS 7
+    public static void sumNumbers() {
+        Scanner sc = new Scanner(System.in);
+        int sum = 0;
+            
+        while (true) {
+            try {
+                System.out.print("Enter a number (0 to stop): ");
+                int num = sc.nextInt();
+                    
+                if (num == 0) {
+                    break;
+                }
+                    
+                sum += num;
+            } catch (InputMismatchException e) {
+                System.out.println("Error: invalid number!");
+                sc.next(); // clear invalid input
+            }
+        }
+        System.out.println("Sum: " + sum);
+    }
+
+    // BCS 8
+    public static void cubeInteger() {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Input number of terms: ");
+        int n = sc.nextInt();
+            
+        for (int i = 1; i <= n; i++) {
+            int cube = i * i * i;
+            System.out.println("Number is : " + i + " and cube of " + i + " is : " + cube);
+        }
+    }
+
+    // BCS 9
+    public static void pyramidReverses() {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Input number of rows: ");
+        int rows = sc.nextInt();
+            
+        for (int i = 1; i <= rows; i++) {
+            for (int j = 1; j <= i; j++) {
+                System.out.print(j);
+            }
+            System.out.println();
+        }
+    }
+
+    // BCS 10
+    public static void reversesPyramid() {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Input the number: ");
+        int num = sc.nextInt();
+        
+        for (int i = num; i >= 1; i--) {
+            for (int j = 0; j < (num - i); j++) {
+                System.out.print(" ");
+            }
+            for (int k = 1; k <= i; k++) {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+    }
+}
