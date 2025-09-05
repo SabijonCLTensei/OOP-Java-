@@ -1,0 +1,96 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package sabijonarraydemo;
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author User
+ */
+public class BasicDataTypes {
+    public static void main(String[] args) {
+        
+//        fahrenheit();
+//        inches();
+//        minutes();
+//        pounds();
+//        distance();
+    }
+    //BDT 1
+    public static void fahrenheit() {
+        Scanner sc = new Scanner(System.in);
+        
+        System.out.print("Input a degree in Fahrenheit: ");
+        double fahrenheit = sc.nextDouble();
+        
+        double celsius = (fahrenheit - 32 ) * 5/9;
+        
+        System.out.println("Expected Output: ");
+        System.out.println(fahrenheit + " degrees Fahrenheit is equal to " + celsius + " in Celsius");
+    }
+    //BDT 2
+    public static void inches() {
+        Scanner sc = new Scanner(System.in);
+        
+        System.out.print("Input a value for inches: ");
+        double inches = sc.nextDouble();
+        double meters = inches * 0.0254;
+        
+        System.out.println("Expected Output: ");
+        System.out.println(inches + " inches is " + meters + " meters ");
+    }
+    //BDT 3
+    public static void minutes() {
+        Scanner sc = new Scanner(System.in);
+        
+        System.out.print("Input the number of minutes: ");
+        int minutes = sc.nextInt();
+        
+        int minutesInYear = 60 * 24 * 365;
+        int year = minutes / minutesInYear;
+        int days = (minutes % minutesInYear) / (60 * 24);
+        System.out.println(minutes + " minutes is approximately " + year + " years and " + days + " days");
+    }
+    //BDT 4
+    public static void pounds() {
+        Scanner sc = new Scanner(System.in);
+        
+        System.out.print("Input weight in pounds: ");
+        double weight = sc.nextDouble();
+        System.out.print("Input weight in pounds: ");
+        double height = sc.nextDouble();
+        
+        double weightInKg = weight * 0.45359237;
+        double heightInMeters = height * 0.0254;
+        double bmi = weightInKg / (heightInMeters * heightInMeters);
+        
+        System.out.println("Body Mass Index is: " + bmi);
+    }
+    //BDT 4
+    public static void distance() {
+        Scanner sc = new Scanner(System.in);
+        
+        System.out.print("Input distance in meters: ");
+        float distanceMeters = sc.nextInt();
+        System.out.print("Input hour: ");
+        int hour = sc.nextInt();
+        System.out.print("Input minutes: ");
+        int minutes = sc.nextInt();
+        System.out.print("Input seconds: ");
+        int seconds = sc.nextInt();
+        
+        float totalSeconds  = (hour * 3600) + (minutes * 60) + seconds;
+        
+        float speedMetersPerSecond = distanceMeters / totalSeconds;
+        float speedKilometerPerHour = (distanceMeters / 1000) / (totalSeconds / 3600);
+        float speedMilesPerHour = (distanceMeters / 1609) / (totalSeconds / 3600);
+        
+        System.out.println("Your speed in meters/second is " + speedMetersPerSecond);
+        System.out.println("Your speed in km/h is " + speedKilometerPerHour);
+        System.out.println("Your speed in miles/h is " + speedMilesPerHour);
+    }
+    
+}
